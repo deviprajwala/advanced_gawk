@@ -1,0 +1,55 @@
+----------field separator----------
+data11***data13***data15
+data21***data23***data25
+data31***data33***data35
+data41***data43***data45
+data51***data53***data55
+data61***data63***data65
+
+
+----------record separator----------
+data12 data14<-->data22 data24<-->data32 data34<-->data42 data44<-->data52 data54<-->data62 data64<-->
+
+----------commandline parameters----------
+2 data.txt
+
+
+----------environment variables----------
+/home/devi
+
+
+----------NF command----------
+data11 data15
+data21 data25
+data31 data35
+data41 data45
+data51 data55
+data61 data65
+
+
+----------NR and FNR command----------
+data11 FNR =1 NR =1
+data21 FNR =2 NR =2
+data31 FNR =3 NR =3
+data41 FNR =4 NR =4
+data51 FNR =5 NR =5
+data61 FNR =6 NR =6
+data11 FNR =1 NR =7
+data21 FNR =2 NR =8
+data31 FNR =3 NR =9
+data41 FNR =4 NR =10
+data51 FNR =5 NR =11
+data61 FNR =6 NR =12
+
+
+----------user defined variables----------
+hello
+
+
+----------assigning variables in command line----------
+data13
+data23
+data33
+data43
+data53
+data63

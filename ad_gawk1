@@ -1,0 +1,52 @@
+#!/bin/bash
+#This script contains the advanced commands used in the gwak programming.
+
+echo "----------field separator----------" >ad_gawk1_out.txt
+gawk 'BEGIN {FS=" ";OFS="***"}{print $1,$3,$5}' data.txt >>ad_gawk1_out.txt
+#field separator
+#The FS variable is used to specify the input field separator character and the OFS variable is used to specify the output field separator character.The above command replaces the field separator character and prints the first,third and fifth data field.
+echo -e "\n" >>ad_gawk1_out.txt
+
+echo "----------record separator----------" >>ad_gawk1_out.txt
+gawk 'BEGIN {RS="\n";ORS="<-->"}{print $2,$4}' data.txt >>ad_gawk1_out.txt
+#record separator
+#The RS and ORS variable define how the gawk program handles records in the data stream.The RS variable is used to specify the input record separator character and the ORS variable is used to specify the output record separator character.The above command replaces the record separator character and prints the second and fourth data field. 
+echo -e "\n" >>ad_gawk1_out.txt
+
+echo "----------commandline parameters----------" >>ad_gawk1_out.txt
+gawk 'BEGIN{print ARGC,ARGV[1]}' data.txt >>ad_gawk1_out.txt
+#commandline parameters
+#the ARGC variable contains the total number of commandline parameters whereas the ARGV is an array of parameters which contains the commandline parameters as array elements.
+echo -e "\n" >>ad_gawk1_out.txt
+
+echo "----------environment variables----------" >>ad_gawk1_out.txt
+gawk 'BEGIN{print ENVIRON["HOME"]}' data.txt >>ad_gawk1_out.txt 
+#environment variables
+#the environment variable uses the associative array to retrive shell environment variables.
+echo -e "\n" >>ad_gawk1_out.txt
+
+echo "----------NF command----------" >>ad_gawk1_out.txt
+gawk 'BEGIN{FS=" "}{print $1 " " $NF}' data.txt >>ad_gawk1_out.txt
+#NF command
+#The NF variable contains the ttal number of data fields peresent in the record.
+echo -e "\n" >>ad_gawk1_out.txt
+
+echo "----------NR and FNR command----------" >>ad_gawk1_out.txt
+gawk 'BEGIN{FS=" "}{ print $1 ,"FNR ="FNR,"NR ="NR}' data.txt data.txt >>ad_gawk1_out.txt
+#FNR and NR commands are similar but NR command contains the total number of records processed whereas FNR command contains the total number of records processed in the current data file.
+echo -e "\n">>ad_gawk1_out.txt
+
+echo "----------user defined variables----------">>ad_gawk1_out.txt
+gawk 'BEGIN{
+variable="hello"
+print variable
+}'>>ad_gawk1_out.txt
+#user defined variables
+#the variables which are defined by the users can be assigned values
+echo -e "\n">>ad_gawk1_out.txt
+
+echo "----------assigning variables in command line----------">>ad_gawk1_out.txt
+gawk -v n=3 -f script.gawk data.txt>>ad_gawk1_out.txt
+#assigning variables in the command line 
+#it is possible to assign the variable through the command line while running the scripts.We can use -v to specify variables that are set before the BEGIN section of the code.
+

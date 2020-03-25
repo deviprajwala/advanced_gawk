@@ -1,0 +1,48 @@
+#!/bin/bash
+#This script contains the advanced commands used in the gwak programming.
+
+echo "-----------working with arrays---------">ad_gawk2_out.txt
+gawk 'BEGIN{
+var[1]="apple"
+var[2]="banana"
+var[3]="grapes"
+var[4]="watermelon"
+print var[2]}' >>ad_gawk2_out.txt
+#working with arrays
+#Arrays are used for storing multiple values in a single variable.Gawk provides array feature using associative arrays.
+echo -e "\n" >>ad_gawk2_out.txt
+
+
+echo "----------iterating through array variables---------">>ad_gawk2_out.txt
+gawk 'BEGIN{
+var["a"] = 1
+var["b"] = 2
+var["c"] = 3
+var["d"] = 4
+for (test in var)
+{
+print "Index:",test,"Value:",var[test]
+}
+}' >>ad_gawk2_out.txt
+#iterating through array variables
+#we iterate through the array variables with the help of the for loop
+echo -e "\n" >>ad_gawk2_out.txt
+
+
+echo "----------deleting array variables---------">>ad_gawk2_out.txt
+gawk 'BEGIN{
+var["a"] = 1
+var["b"] = 2
+var["c"] = 3
+var["d"] = 4
+delete var["a"]
+for (test in var)
+{
+print "Index:",test,"Value:",var[test]
+}
+}' >>ad_gawk2_out.txt
+#deleting array variables
+#we can the delete the array variables by specifying the index
+echo -e "\n" >>ad_gawk2_out.txt
+
+cat ad_gawk2_out.txt

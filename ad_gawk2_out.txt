@@ -1,0 +1,15 @@
+-----------working with arrays---------
+banana
+
+
+----------iterating through array variables---------
+Index: a Value: 1
+Index: b Value: 2
+Index: c Value: 3
+Index: d Value: 4
+
+
+----------deleting array variables---------
+Index: b Value: 2
+Index: c Value: 3
+Index: d Value: 4
