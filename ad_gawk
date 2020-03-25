@@ -1,0 +1,49 @@
+#!/bin/bash
+#This script contains th advsnced commands used in the gwak programming.
+
+echo "----------field separator----------"
+gawk 'BEGIN {FS=" ";OFS="***"}{print $1,$3,$5}' data.txt
+#field separator
+#The FS variable is used to specify the input field separator character and the OFS variable is used to specify the output field separator character.The above command replaces the field separator character and prints the first,third and fifth data field.
+echo -e "\n"
+
+echo "----------record separator----------"
+gawk 'BEGIN {RS="\n";ORS="<-->"}{print $2,$4}' data.txt
+#record separator
+#The RS and ORS variable define how the gawk program handles records in the data stream.The RS variable is used to specify the input record separator character and the ORS variable is used to specify the output record separator character.The above command replaces the record separator character and prints the second and fourth data field. 
+echo -e "\n"
+
+echo "----------commandline parameters----------"
+gawk 'BEGIN{print ARGC,ARGV[1]}' data.txt
+#commandline parameters
+#the ARGC variable contains the total number of commandline parameters whereas the ARGV is an array of parameters which contains the commandline parameters as array elements.
+echo -e "\n"
+
+echo "----------environment variables----------"
+gawk 'BEGIN{print ENVIRON["HOME"]}' data.txt
+#environment variables
+#the environment variable uses the associative array to retrive shell environment variables.
+echo -e "\n"
+
+echo "----------NF command----------"
+gawk 'BEGIN{FS=" "}{print $1 " " $NF}' data.txt
+#NF command
+#The NF variable contains the ttal number of data fields peresent in the record.
+echo -e "\n"
+
+echo "----------NR and FNR command----------"
+gawk 'BEGIN{FS=" "}{ print $1 ,"FNR ="FNR,"NR ="NR}' data.txt data.txt
+#FNR and NR commands are similar but NR command contains the total number of records processed whereas FNR command contains the total number of records processed in the current data file.
+echo -e "\n"
+
+echo "----------user defined variables----------"
+gawk 'BEGIN{
+variable="hello"
+print variable
+}'
+#user defined variables
+#the variables which are defined by the users can be assigned values
+echo -e "\n"
+
+echo "----------assigning variables in command line----------"
+gawk -v n=3 -f script.gawk data.txt
