@@ -45,4 +45,21 @@ print "Index:",test,"Value:",var[test]
 #we can the delete the array variables by specifying the index
 echo -e "\n" >>ad_gawk2_out.txt
 
-cat ad_gawk2_out.txt
+
+echo "----------using pattern---------">>ad_gawk2_out.txt
+gawk 'BEGIN{FS=" "} /data1/ {print $1}' data.txt >>ad_gawk2_out.txt
+#using pattern
+#it is possible to search for a pattern and perform various operations on them.
+echo -e "\n" >>ad_gawk2_out.txt
+
+
+echo "----------matching operator---------">>ad_gawk2_out.txt
+gawk 'BEGIN{FS=" "} $2 ~ /^data.2/{print $2}' data.txt >>ad_gawk2_out.txt
+#matching operator
+#It allows you to restrict a regular expression to a specifiv datafield in the records
+echo -e "\n" >>ad_gawk2_out.txt
+gawk 'BEGIN{FS=" "} $2 !~ /^data3./{print $2}' data.txt >>ad_gawk2_out.txt
+#you can also negate the expression by using !
+echo -e "\n" >>ad_gawk2_out.txt
+
+

@@ -13,3 +13,25 @@ Index: d Value: 4
 Index: b Value: 2
 Index: c Value: 3
 Index: d Value: 4
+
+
+----------using pattern---------
+data11
+
+
+----------matching operator---------
+data12
+data22
+data32
+data42
+data52
+data62
+
+
+data12
+data22
+data42
+data52
+data62
+
+
