@@ -1,0 +1,58 @@
+-----------modifiers---------
+data   data15
+data   data25
+data   data35
+data   data45
+data   data55
+data   data65
+
+
+-----------mathematical functions---------
+cotangent of x and y; 0.982794
+cosine : 0.525322
+sine : 0.850904
+square root: 6.7082
+bitwise and: 0
+bitwise or: 1111
+bitwise xor: 1111
+complement: 9007199254740991
+lshift: 4444
+rshift: 277
+
+
+-----------string functions---------
+Index: 1 Value: 1000
+Index: 2 Value: 1
+Index: 3 Value: 10
+Index: 4 Value: 100
+
+Index: 1 Value: 1
+Index: 2 Value: 10
+Index: 3 Value: 100
+Index: 4 Value: 1000
+
+Index: 1 Value: 1
+Index: 2 Value: 2
+Index: 3 Value: 3
+Index: 4 Value: 4
+-----------gensub---------
+musk melon
+
+
+-----------gsub---------
+bikepenter
+
+
+-----------case of alphabets---------
+MUSKY
+musky
+5
+
+
+-----------use of functions---------
+da - data14
+da - data24
+da - data34
+da - data44
+da - data54
+da - data64

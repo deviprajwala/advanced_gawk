@@ -1,0 +1,21 @@
+-----------if-else statement---------
+found
+data21
+data31
+data41
+data51
+data61
+
+
+-----------while loop---------
+SUM: 31
+SUM: 70
+SUM: 82
+SUM: 101
+
+
+-----------for loop---------
+average: 10.3333
+average: 23.3333
+average: 27.3333
+average: 33.6667

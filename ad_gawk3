@@ -1,0 +1,48 @@
+#!/bin/bash
+#This script contains the advanced commands used in the gwak programming.
+
+echo "-----------if-else statement---------">ad_gawk3_out.txt
+gawk '{
+ if ($1=="data11")
+ {
+  print "found"
+ }
+ else
+ {
+  print $1
+ }
+}' data.txt >>ad_gawk3_out.txt
+#if-else statement
+#if the condition is satisfied the commands within if statement is executed,if the condition is not satisfied then the commands within else block is executed.
+echo -e "\n" >>ad_gawk3_out.txt
+
+
+echo "-----------while loop---------">>ad_gawk3_out.txt
+gawk '{
+ sum = 0
+ i = 1
+ while( i < 4)
+ {
+  sum += $i
+  i++
+ }
+ print "SUM:",sum
+ }' value.txt >>ad_gawk3_out.txt
+#while loop
+#the while loop executes the command within the block until the condition is violated
+echo -e "\n" >>ad_gawk3_out.txt
+
+
+echo "-----------for loop---------">>ad_gawk3_out.txt
+gawk '{
+total = 0
+for (i = 1;i < 4;i++)
+{
+ total+=$i
+}
+avg = total / 3
+print "average:",avg
+}' value.txt >>ad_gawk3_out.txt
+#for loop
+#for loop can be used to iterate through the values.
+

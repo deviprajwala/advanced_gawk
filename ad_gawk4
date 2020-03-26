@@ -1,0 +1,130 @@
+#!/bin/bash
+#This script contains the advanced commands used in the gwak programming.
+
+echo "-----------formatted printing---------">ad_gawk4_out.txt
+gawk 'BEGIN{
+x=100
+printf "ascii: %c\n", x
+printf "integer: %i\n" ,x
+printf "scientific: %e\n",x
+printf "floating: %f\n",x
+printf "octal: %o\n",x
+printf "hexadecimal: %x\n",x
+}'>>ad_gawk4_out.txt
+#formatted printing
+#we can format the way of displaying the numbers with the help of format specifier control letters
+echo -e "\n" >>ad_gawk4_out.txt
+
+
+echo "-----------modifiers---------">ad_gawk4_out.txt
+gawk 'BEGIN{FS=" " ; RS="\n"}{ printf "%.4s   %-5s\n",$1,$NF}' data.txt >>ad_gawk4_out.txt
+#modifiers
+#there are three modifiers width,prec and minus sign.width is to specify minimum number of characters.prec is for maximum number of characters and minu is for left justification.
+echo -e "\n" >>ad_gawk4_out.txt
+
+
+echo "-----------mathematical functions---------">>ad_gawk4_out.txt
+gawk 'BEGIN{
+x=45
+y=30
+v1=0000
+v2=1111
+z=atan2( x,y )
+print "cotangent of x and y;",z
+z=cos(x)
+print "cosine :",z
+z=sin(x)
+print "sine :",z
+z=sqrt(x)
+print "square root:",z
+z=and(v1,v2)
+print "bitwise and:",z
+z=or(v1,v2)
+print "bitwise or:",z
+z=xor(v1,v2)
+print "bitwise xor:",z
+z=compl(v1)
+print "complement:",z
+z=lshift(v2,2)
+print "lshift:",z
+z=rshift(v2,2)
+print "rshift:",z
+}' >>ad_gawk4_out.txt
+#mathematical functions
+#various mathematical operations can be performed with the help of available mathematical functions.
+echo -e "\n" >>ad_gawk4_out.txt
+
+
+echo "-----------string functions---------">>ad_gawk4_out.txt
+gawk 'BEGIN{
+var[1] = 1000
+var[2] = 1
+var[3] = 10
+var[4] = 100
+n=4
+for (i = 1; i <= n; i++)
+{
+print "Index:",i,"Value:",var[i]
+}
+printf "\n"
+n=asort (var,d)
+for (i = 1; i <= n; i++)
+{
+print "Index:",i,"Value:",d[i]
+}
+printf "\n"
+n=asorti (var,d)
+for (i = 1; i <= n; i++)
+{
+print "Index:",i,"Value:",d[i]
+}
+}'>>ad_gawk4_out.txt
+#functions related to sorting in string
+
+echo "-----------gensub---------">>ad_gawk4_out.txt
+gawk '
+BEGIN {
+a = "water melon"
+b = gensub(/water/, "musk", "g", a)
+print b
+}'>>ad_gawk4_out.txt
+echo -e "\n" >>ad_gawk4_out.txt
+#gensub function
+
+echo "-----------gsub---------">>ad_gawk4_out.txt
+gawk '
+BEGIN {
+a = "carpenter"
+b = gsub(/car*/, "bike", a)
+print a
+}'>>ad_gawk4_out.txt
+echo -e "\n" >>ad_gawk4_out.txt
+#gsub function
+
+echo "-----------case of alphabets---------">>ad_gawk4_out.txt
+gawk '
+BEGIN {
+a="Musky"
+print toupper(a);
+print tolower(a);
+print length(a);
+}'>>ad_gawk4_out.txt
+echo -e "\n" >>ad_gawk4_out.txt
+#general function
+
+echo "-----------use of functions---------">>ad_gawk4_out.txt
+gawk '
+function printii()
+{
+  printf "%.2s - %-s\n", $1, $4
+}
+BEGIN{FS=" ";RS="\n"}
+{
+
+ printii()
+}' data.txt >>ad_gawk4_out.txt
+#function
+#user can define his function and use it wherever necessary
+
+#cat ad_gawk4_out.txt
+
